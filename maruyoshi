@@ -1,0 +1,17 @@
+module Opning
+    class Director
+        def initialize
+            @font = Font.new(50)
+            @font2 = Font.new(24)
+        end
+    
+        def reload
+        end
+    
+        def play
+            Window.draw_font(300, 300, "GAME START", @font, color: C_GREEN)
+            Window.draw_font(400, 384, "Push s key.", @font2)
+            Scene.move_to(:game) if Input.key_push?(K_S)
+        end
+    end
+end
